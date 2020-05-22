@@ -1,0 +1,36 @@
+<br>
+<h1>Dashboard</h1>
+<div class="row justify-content-center">
+    <div class="col-sm-12 col-md-6 col-lg-6">
+        <app-piechart [chartTitle]="'Calidda'" [dataChart]="pieOne"></app-piechart>
+    </div>
+    <div class="col-sm-12 col-md-6 col-lg-6">
+        <app-piechart [chartTitle]="'Contugas'" [dataChart]="pieTwo"></app-piechart>
+    </div>
+
+    <div class="col-sm-12 col-md-6 col-lg-6 mt-2">
+        <app-piechart [chartTitle]="'Naturgy'" [dataChart]="pieThree"></app-piechart>
+    </div>
+    <div class="col-sm-12 col-md-6 col-lg-6 mt-2">
+        <app-piechart [chartTitle]="'Quavii'" [dataChart]="pieFour"></app-piechart>
+    </div>
+
+    <div class="col-sm-12 col-md-6 col-lg-6 mt-2 d-flex flex-column">
+        <button mat-button color="primary" (click)="showConc = !showConc">Cambiar a tabla</button>
+        <div *ngIf="showConc">
+            <app-datatable [colTitle]="titlesConc" [columns]="titlesConc" [dataSource]="dataConc"></app-datatable>
+        </div>
+        <div *ngIf="!showConc">
+            <app-barchar [chartTitle]="'Por Concesionaria'" [dataChart]="barConcesionaria"></app-barchar>
+        </div>
+    </div>
+    <div class="col-sm-12 col-md-6 col-lg-6 mt-2 d-flex flex-column">
+        <button mat-button color="primary" (click)="showDep = !showDep">Cambiar a tabla</button>
+        <div *ngIf="showDep">
+            <app-datatable [colTitle]="titlesDep" [columns]="titlesDep" [dataSource]="dataDep"></app-datatable>
+        </div>
+        <div *ngIf="!showDep">
+            <app-barchar [chartTitle]="'Por Departamento'" [dataChart]="barDepartamento"></app-barchar>
+        </div>
+    </div>
+</div>

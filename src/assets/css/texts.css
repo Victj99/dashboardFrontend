@@ -1,0 +1,39 @@
+.text-w {
+    color: white;
+}
+
+.text-wg-b {
+    font-weight: bold !important;
+}
+
+.ta-center {
+    text-align: center;
+}
+
+.ta-left {
+    text-align: left !important;
+}
+
+.ta-right {
+    text-align: right !important;
+}
+
+.ta-justify {
+    text-align: justify !important;
+}
+
+.text-primary {
+    color: #4e73df;
+}
+
+.text-success {
+    color: #1cc88a;
+}
+
+.text-info {
+    color: #36b9cc;
+}
+
+.text-warning {
+    color: #f6c23e;
+}

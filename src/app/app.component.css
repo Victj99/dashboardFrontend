@@ -1,0 +1,28 @@
+.mat-drawer {
+    width: 14rem !important;
+}
+
+.shadow {
+    box-shadow: 0 .15rem 1.75rem 0 rgba(58, 59, 69, .15)!important;
+}
+
+.divb-w {
+    background-color: #6888e4;
+}
+
+.s-header {
+    height: 70px;
+}
+
+.i-x2 {
+    font-size: 2rem !important;
+}
+
+.chartHeader {
+    background-color: #f8f9fc;
+}
+
+.chartHeader h3 {
+    margin: 0;
+    font-weight: 700!important;
+}

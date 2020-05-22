@@ -1,1 +1,38 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import "assets/css/bootstrap-grid.min.css";
+@import "assets/css/texts.css";
+
+/*  */
+
+.bg-white {
+    background-color: white;
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    background-color: #f8f9fc;
+    font-family: Nunito, "Helvetica Neue", sans-serif;
+}
+
+.align-middle {
+    vertical-align: middle;
+}
+
+.bg-primary {
+    background-color: #4167d5;
+}
+
+.bg-w2 {
+    background-color: #f8f9fc !important;
+}
+
+.bg-w {
+    background-color: white;
+}
+
+.bg-transp {
+    background-color: transparent;
+}
