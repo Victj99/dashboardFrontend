@@ -1,6 +1,12 @@
 <br>
 <h1>Dashboard</h1>
 <div class="row justify-content-center">
+
+    <app-callout class="col-sm-12 col-md-6 col-lg-3" [type]="'c-primary'" [color]="'text-primary'" [title]="'Cálida'" [content]="'180518'"></app-callout>
+    <app-callout class="col-sm-12 col-md-6 col-lg-3" [type]="'c-success'" [color]="'text-success'" [title]="'Contugas'" [content]="'6927'"></app-callout>
+    <app-callout class="col-sm-12 col-md-6 col-lg-3" [type]="'c-info'" [color]="'text-info'" [title]="'Naturgy'" [content]="'1114'"></app-callout>
+    <app-callout class="col-sm-12 col-md-6 col-lg-3" [type]="'c-warning'" [color]="'text-warning'" [title]="'Quavii'" [content]="'65803'"></app-callout>
+
     <div class="col-sm-12 col-md-6 col-lg-6">
         <app-piechart [chartTitle]="'Calidda'" [dataChart]="pieOne"></app-piechart>
     </div>
@@ -30,7 +36,7 @@
             <app-datatable [colTitle]="titlesDep" [columns]="titlesDep" [dataSource]="dataDep"></app-datatable>
         </div>
         <div *ngIf="!showDep">
-            <app-barchar [chartTitle]="'Por Departamento'" [dataChart]="barDepartamento"></app-barchar>
+            <app-barchar [type]="'horizontalBar'" [chartTitle]="'Por Departamento'" [dataChart]="barDepartamento"></app-barchar>
         </div>
     </div>
 </div>

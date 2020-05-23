@@ -75,12 +75,12 @@ export class PrincipalComponent implements OnInit {
   barDepartamento = {
     datasets: [{
       label: 'Departamento',
-      data: [11316, 518, 6213, 37934, 6927, 27848, 20424, 142586, 570, 26],
+      data: [26, 518, 570, 6213, 6927, 11316, 20424, 27848, 37934, 142586].reverse(),
       backgroundColor: this.color.randomColor({ count: 10, format: 'rgb', seed: 13 }),
     }],
     labels: [
-      'Ancash', 'Arequipa', 'Cajamarca', 'Callao', 'Ica', 'La', 'Lambayeque', 'Lima', 'Moquegua', 'Tacna'
-    ]
+      'Tacna', 'Arequipa', 'Moquegua', 'Cajamarca', 'Ica', 'Ancash', 'Lambayeque', 'La', 'Callao', 'Lima'
+    ].reverse()
   };
 
 

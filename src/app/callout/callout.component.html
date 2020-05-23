@@ -1,0 +1,11 @@
+<div [class]="!type.includes('b') ? type:null" class="callout mat-elevation-z2">
+    <blockquote [class]="type.includes('b') ? type + ' callout': null" class="mx-0 py-3 row align-items-center">
+        <div class="col">
+            <h5 [class]="color" class="m-0">{{title}}</h5>
+            <h2 class="m-0 c text-wg-b">{{content}}</h2>
+        </div>
+        <div *ngIf="icon" class="col-auto">
+            <mat-icon aria-hidden="true" [class]="color">{{iname}}</mat-icon>
+        </div>
+    </blockquote>
+</div>

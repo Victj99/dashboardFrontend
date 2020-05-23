@@ -1,0 +1,52 @@
+.callout {
+    border-style: solid;
+    border-width: 0;
+    border-radius: 4px;
+    background-color: white;
+    border-radius: 5px;
+}
+
+.c-primary {
+    border-left: 4px solid #4e73df;
+}
+
+.c-success {
+    border-left: 4px solid #1cc88a;
+}
+
+.c-info {
+    border-left: 4px solid #36b9cc;
+}
+
+.c-warning {
+    border-left: 4px solid #f6c23e;
+}
+
+.c-b {
+    border: 1px solid black;
+    border-left: 4px;
+}
+
+.c-b-primary {
+    border-color: #4e73df;
+    border-width: 1px 1px 1px 4px;
+}
+
+.c-b-success {
+    border: 1px solid #1cc88a;
+    border-width: 1px 1px 1px 4px;
+}
+
+.c-b-info {
+    border: 1px solid #36b9cc;
+    border-width: 1px 1px 1px 4px;
+}
+
+.c-b-warning {
+    border: 1px solid #f6c23e;
+    border-width: 1px 1px 1px 4px;
+}
+
+.c {
+    color: rgb(80, 80, 80);
+}

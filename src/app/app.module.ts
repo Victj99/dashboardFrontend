@@ -16,6 +16,9 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatTableModule } from '@angular/material/table';
+import { CalloutComponent } from './callout/callout.component';
+import { MapahabilitadosComponent } from './mapahabilitados/mapahabilitados.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
     declarations: [
@@ -23,10 +26,12 @@ import { MatTableModule } from '@angular/material/table';
         PiechartComponent,
         PrincipalComponent,
         BarcharComponent,
-        DatatableComponent
+        DatatableComponent,
+        CalloutComponent,
+        MapahabilitadosComponent
     ],
     imports: [
-        BrowserModule,
+        BrowserModule, HttpClientModule,
         AppRoutingModule,
         BrowserAnimationsModule,
         MatSidenavModule, MatToolbarModule,

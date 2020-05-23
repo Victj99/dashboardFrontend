@@ -9,6 +9,8 @@ export class BarcharComponent implements OnInit, AfterViewInit {
   @Input() dataChart: any;
   @Input() chartTitle: string;
   @Input() type = 'bar';
+  @Input() sort = true;
+  @Input() order = 'asc';
 
   @ViewChild('canvasChart') canvas: ElementRef;
 

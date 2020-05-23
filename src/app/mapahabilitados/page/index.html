@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="stylesheet" href="mapbox/mapbox-gl.css">
+    <link rel="stylesheet" href="css/qgis2web.css">
+    <link rel="stylesheet" href="css/MarkerCluster.css">
+    <link rel="stylesheet" href="css/MarkerCluster.Default.css">
+    <link rel="stylesheet" href="css/leaflet-measure.css">
+    <style>
+        html,
+        body,
+        #map {
+            width: 100%;
+            height: 100%;
+            padding: 0;
+            margin: 0;
+        }
+    </style>
+    <title></title>
+</head>
+
+<body>
+    <div id="map">
+        <nav id="menu"></nav>
+    </div>
+    <script src="js/qgis2web_expressions.js"></script>
+    <script src="./mapbox/mapbox-gl.js"></script>
+    <script src="js/leaflet-measure.js"></script>
+    <script src="js/leaflet.markercluster.js"></script>
+    <script src="data/Habilitaciones2020_1.js"></script>
+    <script src="./mapbox/style.js"></script>
+    <script src="./js/Autolinker.min.js"></script>
+    <script>
+        var map = new mapboxgl.Map({
+            container: 'map',
+            style: styleJSON,
+            center: [-75.62658659692308, -9.427196280525175],
+            zoom: 6,
+            bearing: 360.0,
+            attributionControl: false
+        });
+        map.addControl(new mapboxgl.NavigationControl(), 'top-left');
+        map.addControl(new mapboxgl.AttributionControl({
+            customAttribution: '<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://github.com/mapbox/mapbox-gl-js" target="_blank">Mapbox GL JS</a> &middot; <a href="https://qgis.org" target="_blank">QGIS</a>',
+            compact: false
+        }));
+
+        map.on('click', 'lyr_Habilitaciones2020_1_0', function(e) {
+            var description = '<table>\
+                    <tr>\
+                        <td colspan="2"><strong>Nro_Solicitud</strong><br />' + (e.features[0].properties['Nro_Solicitud'] !== null ? Autolinker.link(e.features[0].properties['Nro_Solicitud'].toLocaleString(), {
+                truncate: {
+                    length: 30,
+                    location: 'smart'
+                }
+            }) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2"><strong>Concesionario</strong><br />' + (e.features[0].properties['Concesionario'] !== null ? Autolinker.link(e.features[0].properties['Concesionario'].toLocaleString(), {
+                truncate: {
+                    length: 30,
+                    location: 'smart'
+                }
+            }) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2"><strong>Empresa Instaladora</strong><br />' + (e.features[0].properties['Empresa Instaladora'] !== null ? Autolinker.link(e.features[0].properties['Empresa Instaladora'].toLocaleString(), {
+                truncate: {
+                    length: 30,
+                    location: 'smart'
+                }
+            }) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2"><strong>Fecha_Habilitacion</strong><br />' + (e.features[0].properties['Fecha_Habilitacion'] !== null ? Autolinker.link(e.features[0].properties['Fecha_Habilitacion'].toLocaleString(), {
+                truncate: {
+                    length: 30,
+                    location: 'smart'
+                }
+            }) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2"><strong>Latitud</strong><br />' + (e.features[0].properties['Latitud'] !== null ? Autolinker.link(e.features[0].properties['Latitud'].toLocaleString(), {
+                truncate: {
+                    length: 30,
+                    location: 'smart'
+                }
+            }) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2"><strong>Longitud</strong><br />' + (e.features[0].properties['Longitud'] !== null ? Autolinker.link(e.features[0].properties['Longitud'].toLocaleString(), {
+                truncate: {
+                    length: 30,
+                    location: 'smart'
+                }
+            }) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2"><strong>Departamento</strong><br />' + (e.features[0].properties['Departamento'] !== null ? Autolinker.link(e.features[0].properties['Departamento'].toLocaleString(), {
+                truncate: {
+                    length: 30,
+                    location: 'smart'
+                }
+            }) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2"><strong>Provincia</strong><br />' + (e.features[0].properties['Provincia'] !== null ? Autolinker.link(e.features[0].properties['Provincia'].toLocaleString(), {
+                truncate: {
+                    length: 30,
+                    location: 'smart'
+                }
+            }) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2"><strong>Distrito</strong><br />' + (e.features[0].properties['Distrito'] !== null ? Autolinker.link(e.features[0].properties['Distrito'].toLocaleString(), {
+                truncate: {
+                    length: 30,
+                    location: 'smart'
+                }
+            }) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2"><strong>Ubigeo</strong><br />' + (e.features[0].properties['Ubigeo'] !== null ? Autolinker.link(e.features[0].properties['Ubigeo'].toLocaleString(), {
+                truncate: {
+                    length: 30,
+                    location: 'smart'
+                }
+            }) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2"><strong>Direccion</strong><br />' + (e.features[0].properties['Direccion'] !== null ? Autolinker.link(e.features[0].properties['Direccion'].toLocaleString(), {
+                truncate: {
+                    length: 30,
+                    location: 'smart'
+                }
+            }) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2"><strong>Nro_Malla</strong><br />' + (e.features[0].properties['Nro_Malla'] !== null ? Autolinker.link(e.features[0].properties['Nro_Malla'].toLocaleString(), {
+                truncate: {
+                    length: 30,
+                    location: 'smart'
+                }
+            }) : '') + '</td>\
+                    </tr>\
+                </table>'
+
+            new mapboxgl.Popup()
+                .setLngLat(e.lngLat)
+                .setHTML(description)
+                .addTo(map);
+        });
+
+        // Change the cursor to a pointer when the mouse is over the places layer.
+        map.on('mouseenter', 'lyr_Habilitaciones2020_1_0', function() {
+            map.getCanvas().style.cursor = 'pointer';
+        });
+
+        // Change it back to a pointer when it leaves.
+        map.on('mouseleave', 'lyr_Habilitaciones2020_1_0', function() {
+            map.getCanvas().style.cursor = '';
+        });
+        var toggleableLayerIds = ['lyr_OSMStandard_0_0', 'OSM Standard', 'lyr_Habilitaciones2020_1_0', 'Habilitaciones 2020'];
+
+        for (var i = 0; i < toggleableLayerIds.length; i = i + 2) {
+            var id = toggleableLayerIds[i];
+            var layerName = toggleableLayerIds[i + 1]
+
+            var link = document.createElement('a');
+            link.href = '#';
+            link.className = 'active';
+            link.layer = id;
+            link.textContent = layerName;
+
+            link.onclick = function(e) {
+                var clickedLayer = this.layer;
+                e.preventDefault();
+                e.stopPropagation();
+
+                var visibility = map.getLayoutProperty(clickedLayer, 'visibility');
+
+                if (typeof visibility === 'undefined' || visibility == 'visible') {
+                    map.setLayoutProperty(clickedLayer, 'visibility', 'none');
+                    this.className = '';
+                } else {
+                    this.className = 'active';
+                    map.setLayoutProperty(clickedLayer, 'visibility', 'visible');
+                }
+            };
+
+            var layers = document.getElementById('menu');
+            layers.appendChild(link);
+        }
+    </script>
+</body>
+
+</html>
